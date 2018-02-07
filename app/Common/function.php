@@ -16,20 +16,6 @@ use RedisDB;
 class Functions
 {
     /**
-     * 邮件发送
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public static function email($data,$blade='open.email',$sub='缘竹科技开放平台开发者注册认证')
-    {
-
-        Mail::send($blade, $data, function($message) use($data,$sub)
-        {
-            $message->to($data['email'], $data['name'])->subject($sub);
-        });
-    }
-    /**
      * 生成随机字符串
      * @param int       $length  要生成的随机字符串长度
      * @param string    $type    随机码类型：0，数字+大小写字母；1，数字；2，小写字母；3，大写字母；4，特殊字符；-1，数字+大小写字母+特殊字符
