@@ -152,7 +152,7 @@ return [
         Arcanedev\LogViewer\LogViewerServiceProvider::class,//log-viewer
         Jenssegers\Mongodb\MongodbServiceProvider::class,//mongodb
         SocialiteProviders\Manager\ServiceProvider::class,//社会化登陆
-        Overtrue\LaravelWeChat\ServiceProvider::class,//easyswoole
+        Overtrue\LaravelWeChat\ServiceProvider::class,//easyWechat
     ],
 
     /*
