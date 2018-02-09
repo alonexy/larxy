@@ -151,6 +151,7 @@ return [
         Barryvdh\Cors\ServiceProvider::class,   // cors  vue跨域
         Arcanedev\LogViewer\LogViewerServiceProvider::class,//log-viewer
         Jenssegers\Mongodb\MongodbServiceProvider::class,//mongodb
+        SocialiteProviders\Manager\ServiceProvider::class,//社会化登陆
     ],
 
     /*
@@ -203,6 +204,7 @@ return [
         'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
         'Mongo'     => Jenssegers\Mongodb\MongodbServiceProvider::class,
         'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

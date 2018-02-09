@@ -34,5 +34,9 @@ return [
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
+    'weixin' => [
+        'client_id' => env('WX_KEY'),
+        'client_secret' => env('WX_SECRET'),
+        'redirect' => env('WX_REDIRECT_URI'),
+    ],
 ];

@@ -65,4 +65,19 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    public function weixin() {
+        return \Socialite::with('weixin')->redirect();
+        // return \Socialite::with('weibo')->scopes(array('email'))->redirect();
+    }
+
+    public function weixin_callback() {
+        \Log::info('weixin_callback',[$_REQUEST]);
+        $oauthUser = \Socialite::with('weixin')->user();
+
+        var_dump($oauthUser->getId());
+        var_dump($oauthUser->getNickname());
+        var_dump($oauthUser->getName());
+        var_dump($oauthUser->getEmail());
+        var_dump($oauthUser->getAvatar());
+    }
 }

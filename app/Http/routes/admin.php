@@ -25,8 +25,9 @@ Route::group(['namespace' => 'Auth', 'as' => 'auth::'], function () {
     Route::get('auth/login', ['as'=>'login::get','uses'=>'AuthController@getLogin']);
     Route::post('auth/login', ['as'=>'login::post','uses'=>'AuthController@postLogin']);
     Route::get('auth/logout', ['as'=>'logout','uses'=>'AuthController@getLogout']);
-    // 注册用户路由
-    Route::get('auth/register', ['as'=>'register::get','middleware' => ['auth'],'uses'=>'AuthController@getRegister']);
-    Route::post('auth/register', ['as'=>'register::post','middleware' => ['auth'],'uses'=>'AuthController@postRegister']);
-
+//    // 注册用户路由
+//    Route::get('auth/register', ['as'=>'register::get','middleware' => ['auth'],'uses'=>'AuthController@getRegister']);
+//    Route::post('auth/register', ['as'=>'register::post','middleware' => ['auth'],'uses'=>'AuthController@postRegister']);
+    Route::get('auth/weixin', 'AuthController@weixin');
+    Route::any('auth/callback', 'AuthController@weixin_callback');
 });
