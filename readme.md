@@ -89,6 +89,10 @@ MAIL_ENCRYPTION=ssl
 log控制台查看
 
 http://{domain}/admin/log-viewer?f=二级的文件夹名称
+
+默认用户名 961610358@qq.com
+密码：123321aa
+[演示地址](http://larxy.alonexy.com/admin)
 ```
 
 
