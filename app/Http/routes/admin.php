@@ -31,3 +31,4 @@ Route::group(['namespace' => 'Auth', 'as' => 'auth::'], function () {
     Route::get('auth/weixin', 'AuthController@weixin');
     Route::any('auth/callback', 'AuthController@weixin_callback');
 });
+Route::any('/wechat', 'WeChatController@serve');
