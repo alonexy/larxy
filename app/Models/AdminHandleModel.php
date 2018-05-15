@@ -24,12 +24,10 @@ class AdminHandleModel extends Model
         }
         $newMenus = [];
         foreach($Menus as &$mk){
-            $newMenus[$mk['C'][4]] = $mk;
+            $mk['sort'] = $mk['C'][4];
         }
-
-        ksort($newMenus);
+        $newMenus = Functions::arrays_sort_by_item($Menus,'SORT_ASC','sort');
         $newMenus = array_values($newMenus);
-
         return $newMenus;
     }
     /**

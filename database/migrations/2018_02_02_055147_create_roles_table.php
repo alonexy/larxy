@@ -16,7 +16,7 @@ class CreateRolesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('desc');
-            $table->string('powers');
+            $table->text('powers');
             $table->integer('status');
             $table->timestamps();
         });

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @Cname:角色管理
@@ -54,11 +55,28 @@ class RolesController extends Controller
             $this->RolesModel->save();
             return redirect()->route('admin::roles');
         }
-        $menusJson = $this->menusHandle($menus);
+
+        if(Auth::user()->id == 1){
+            $menusJson = $this->menusHandle($menus);
+        }else{
+            $roleInfo = $this->RolesModel->find(Auth::user()->rid);
+            if(empty($roleInfo)){
+                abort(403,'对不起，请求参数错误！');
+            }
+            $menusJson = $this->menusHandle($menus,$roleInfo->powers,1);
+            foreach($menusJson as $key=>&$val){
+                if(!$val['checked']){
+                    unset($menusJson[$key]);
+                }
+                $val['checked'] = !$val['checked'];
+            }
+            $menusJson = json_encode(array_values($menusJson));
+        }
+
         return view('admin.roles.info',compact('menus','menusJson'));
     }
     //获取树形菜单json数组
-    public function menusHandle($menus,$power=''){
+    public function menusHandle($menus,$power='',$c=false){
         $arrs = [];
         $powers = explode(',',$power);
 //        dump($powers);
@@ -92,6 +110,9 @@ class RolesController extends Controller
                 $arrs[] = $f_arr;
             }
             $arrs[] = $c_arr;
+        }
+        if($c){
+            return $arrs;
         }
 //        dump($arrs);
         return json_encode($arrs);
