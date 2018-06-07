@@ -92,5 +92,72 @@ class AdminHandleModel extends Model
 //        array_multisort($key_arrays,SORT_ASC,SORT_NUMERIC,$data);
 //        return  $data;
 //}
-
+    /**
+     * 检测类中方法的权限
+     * 待完善
+     * @return array
+     */
+    public function checkFunPower($action='',$menus=[])
+    {
+        if(empty($action)){
+            $action = \Route::current()->getActionName();
+        }
+        list($class, $method) = explode('@', $action);
+        preg_match_all('/App\\\Http\\\Controllers\\\(.*)/',$class,$classMatch);
+        if(!isset($classMatch[1][0])){
+            return [false,'CodeError',[]];
+        }
+        $nowAction = $classMatch[1][0].'@'.$method;
+        $user = \Auth::user();
+        if($user->status !== 1){
+            return [false,'用户状态异常',[]];
+        }
+        //SuperAdmin
+        if($user->id !== 1){
+            if(empty($user->rid)){
+                return [false,'用户角色异常',[]];
+            }
+            list($rStatus,$rPower) = $this->getPowers($user->rid);
+            if(!$rStatus){
+                return [false,'用户权限异常',[]];
+            }
+            if(!in_array($nowAction,$rPower)){
+                return [false,'您没有权限访问',[]];
+            }
+            if($menus){
+                $newMenus = $this->MenusReset($menus,$rPower);
+                return [true,'ok',$newMenus];
+            }
+        }
+        return [true,'ok',$menus];
+    }
+    //获取角色权限
+    public function getPowers($rid){
+        $RolesModel = new AdminRolesModel();
+        $arr = $RolesModel->find($rid);
+        if($arr){
+            if($arr->status  == 1){
+                return [true,explode(',',$arr->powers)];
+            }
+        }
+        return [false,[]];
+    }
+    //个人菜单过滤
+    public function MenusReset($Menus,$rPower){
+        foreach($Menus as $mk=>&$mv){
+            $mv['C'][3] = 'off';
+            foreach($mv['F'] as &$fv){
+                if($fv['display']){
+                    //二级显性菜单 存在权限 C显示
+                    if(in_array($mv['C'][0].'@'.$fv['fun_name'],$rPower)) {
+                        $mv['C'][3] = 'on';
+                    }else{
+                        $fv['display'] = false;
+                    }
+                }
+            }
+        }
+//        dump($Menus,$rPower);
+        return $Menus;
+    }
 }//EndClass
