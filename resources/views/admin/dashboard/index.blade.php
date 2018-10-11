@@ -24,139 +24,63 @@
                             <p>{{$collect['title']}}</p>
                         </div>
                         <div class="icon">
-                            <i class="ion {{$collect['icon']}}"></i>
+                            <i class="fa {{$collect['icon']}}"></i>
                         </div>
-                        <a href="{{url($collect['url'])}}" class="small-box-footer">更多信息 <i class="fa fa-arrow-circle-right"></i></a>
+                        @if(!empty($collect['url']))
+                            <a href="{{url($collect['url'])}}" class="small-box-footer">更多信息 <i
+                                        class="fa fa-arrow-circle-right"></i></a>
+                        @else
+                            <a href="javascript:void(0);" class="small-box-footer">更多信息 <i
+                                        class="fa fa-arrow-circle-right"></i></a>
+                        @endif
                     </div>
                 </div>
             @endforeach
         </div>
         <div class="row">
-            <section class="col-lg-7 connectedSortable">
-                <div class="box box-info">
-                    <div class="box-header">
-                        <i class="fa fa-envelope"></i>
-
-                        <h3 class="box-title">Quick Email</h3>
-                        <div class="pull-right box-tools">
-                            <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
-                                <i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="emailto" placeholder="Email to:">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject">
-                            </div>
-                            <div>
-                                <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="box-footer clearfix">
-                        <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
-                            <i class="fa fa-arrow-circle-right"></i></button>
-                    </div>
-                </div>
-            </section>
-            <section class="col-lg-5 connectedSortable">
+            <section class="col-lg-12 connectedSortable">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <i class="ion ion-clipboard"></i>
-
-                        <h3 class="box-title">To Do List</h3>
-
+                            <h3 class="box-title">暂无消息</h3>
                         <div class="box-tools pull-right">
-                            <ul class="pagination pagination-sm inline">
-                                <li><a href="#">&laquo;</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                            </ul>
+
                         </div>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <ul class="todo-list">
-                            <li>
-                                <!-- drag handle -->
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                <!-- checkbox -->
-                                <input type="checkbox" value="">
-                                <!-- todo text -->
-                                <span class="text">Design a nice theme</span>
-                                <!-- Emphasis label -->
-                                <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                                <!-- General tools such as edit or delete-->
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                <input type="checkbox" value="">
-                                <span class="text">Make the theme responsive</span>
-                                <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                <input type="checkbox" value="">
-                                <span class="text">Let theme shine like a star</span>
-                                <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                <input type="checkbox" value="">
-                                <span class="text">Check your messages and notifications</span>
-                                <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                            <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                <input type="checkbox" value="">
-                                <span class="text">Let theme shine like a star</span>
-                                <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                                <div class="tools">
-                                    <i class="fa fa-edit"></i>
-                                    <i class="fa fa-trash-o"></i>
-                                </div>
-                            </li>
-                        </ul>
+                        {{--<ul class="todo-list">--}}
+                            {{--@foreach($FollowFailOrders as $FollowFailOrder)--}}
+                                {{--<li>--}}
+                                    {{--<!-- drag handle -->--}}
+                      {{--<span class="handle">--}}
+                        {{--<i class="fa fa-ellipsis-v"></i>--}}
+                        {{--<i class="fa fa-ellipsis-v"></i>--}}
+                      {{--</span>--}}
+                                    {{--<!-- todo text -->--}}
+                                    {{--<span class="text"><a class="layui-btn layui-btn-radius layui-btn-primary"--}}
+                                                          {{--href="{{URL::route("admin::getLogBySid")}}?s_uuid={{ $FollowFailOrder['s_uuid'] or 's_uuid is null' }}">--}}
+                                            {{--查看 </a></span>--}}
+                                    {{--<span class="text">用户:{{ $FollowFailOrder['master_server']  }}--}}
+                                        {{--_{{ $FollowFailOrder['follow_user_id'] or 'follow_user_id is null' }}</span>--}}
+                                    {{--<span class="text">Symbol:{{ $FollowFailOrder['symbol'] or ' symbol is null' }}</span>--}}
+                                    {{--<span class="text">Volume:{{ $FollowFailOrder['volume'] or ' volume is null' }}</span>--}}
+                                    {{--<span class="text">Cmd:{{ $FollowFailOrder['cmd'] or ' cmd is null' }}</span>--}}
+                                    {{--<span class="text">错误信息:【{{ $FollowFailOrder['err_msg'] or ' Error is null' }}--}}
+                                        {{--】</span>--}}
+                                    {{--<!-- Emphasis label -->--}}
+                                    {{--<small class="label label-danger"><i--}}
+                                                {{--class="fa fa-clock-o"></i> {{ $FollowFailOrder['err_time_now'] or '--' }}--}}
+                                    {{--</small>--}}
+                                    {{--<!-- General tools such as edit or delete-->--}}
+                                    {{--<div class="tools">--}}
+                                    {{--</div>--}}
+                                {{--</li>--}}
+                            {{--@endforeach--}}
+                        {{--</ul>--}}
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer clearfix no-border">
-                        <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+
                     </div>
                 </div>
             </section>

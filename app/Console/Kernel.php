@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\Inspire::class,
         \App\Console\Commands\proxyIp::class, //代理ip
+        \App\Console\Commands\CrawlHandle::class,
     ];
 
     /**

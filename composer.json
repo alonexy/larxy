@@ -21,7 +21,8 @@
         "jenssegers/mongodb":"v3.2.3",
         "socialiteproviders/weixin": "^4.0",
         "overtrue/laravel-wechat": "~4.0",
-        "filp/whoops": "^2.1"
+        "filp/whoops": "^2.1",
+        "overtrue/chinese-calendar": "^0.0.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
