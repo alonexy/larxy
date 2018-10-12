@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02236ca9ee1b1bf65510ad2926257e80",
+    "content-hash": "e2462a472363458ee5d4369eec3379d9",
     "packages": [
+        {
+            "name": "alonexy/helper",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alonexy/Helper.git",
+                "reference": "18f3cb32e8660fbd17932e06985c61a97d9c9b3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alonexy/Helper/zipball/18f3cb32e8660fbd17932e06985c61a97d9c9b3a",
+                "reference": "18f3cb32e8660fbd17932e06985c61a97d9c9b3a",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^1.9",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alonexy\\Helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "alonexy",
+                    "email": "hpl1124@126.com"
+                }
+            ],
+            "description": "Code辅助",
+            "time": "2018-10-12T03:30:25+00:00"
+        },
         {
             "name": "arcanedev/log-viewer",
             "version": "4.3.1",
