@@ -1,7 +1,7 @@
 @extends('admin.admin')
 @section('other-css')
     {!! editor_css() !!}
-    <link href="//cdn.bootcss.com/select2/4.0.3/css/select2.min.css" rel="stylesheet">
+    <link href="{{asset("/cdnboot/select2/4.0.3/css/select2.min.css") }}" rel="stylesheet">
     <link rel="stylesheet" href="/ztree/css/bootstrapStyle/bootstrapStyle.css" type="text/css">
 @endsection
 @section('content-header')

@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @section('head-css')
-        <link href="//cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.css" rel="stylesheet">
-        <link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{asset("/cdnboot/font-awesome/4.6.0/css/font-awesome.css") }}" rel="stylesheet">
+        <link href="{{asset("/cdnboot/bootstrap/3.3.0/css/bootstrap.min.css") }}" rel="stylesheet">
         <link rel="stylesheet" href="{{url('dist/css/AdminLTE.css')}}">
         <link rel="stylesheet" href="{{url('dist/css/ionicons.min.css')}}">
         <link rel="stylesheet" href="{{url('dist/css/skins/_all-skins.css')}}">
@@ -38,10 +38,10 @@
 
 
 @section('head-js')
-    <script src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//cdn.bootcss.com/vue/2.0.0-rc.5/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/vue.resource/1.0.2/vue-resource.min.js"></script>
+    <script src="{{asset("/cdnboot/jquery/2.1.0/jquery.min.js") }}"></script>
+    <script src="{{asset("/cdnboot/bootstrap/3.3.0/js/bootstrap.min.js") }}"></script>
+    <script src="{{asset("/cdnboot/vue/2.0.0-rc.5/vue.min.js") }}"></script>
+    <script src="{{asset("/cdnboot/vue.resource/1.0.2/vue-resource.min.js") }}"></script>
     <script src="{{url('dist/js/admin.js')}}"></script>
     <script src="{{url('dist/js/demo.js')}}"></script>
     <script src="{{url('dist/js/raphael.min.js')}}"></script>
