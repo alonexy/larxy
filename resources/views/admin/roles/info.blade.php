@@ -1,6 +1,5 @@
 @extends('admin.admin')
 @section('other-css')
-    {!! editor_css() !!}
     <link href="{{asset("/cdnboot/select2/4.0.3/css/select2.min.css") }}" rel="stylesheet">
     <link rel="stylesheet" href="/ztree/css/bootstrapStyle/bootstrapStyle.css" type="text/css">
 @endsection
@@ -94,7 +93,6 @@
     </div>
 @stop
 @section('other-js')
-    {!! editor_js() !!}
     <script src="//cdn.bootcss.com/select2/4.0.3/js/select2.full.min.js"></script>
     <script type="text/javascript" src="/ztree/js/jquery.ztree.core.js"></script>
     <script type="text/javascript" src="/ztree/js/jquery.ztree.excheck.js"></script>
