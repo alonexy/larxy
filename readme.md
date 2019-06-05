@@ -1,7 +1,7 @@
 ## 一个基于laravel5.1的后台系统
 
-模版采用 Adminlte.io
-样式参照：[Adminlte.io](http://cn.inspinia.cn/)
+模版采用 inspinia
+样式参照：[cn_inspinia](http://cn.inspinia.cn/)
 #### 前端代码更新
 ```
 npm install
