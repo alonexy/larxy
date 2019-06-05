@@ -27,80 +27,22 @@ class ArticlesController extends Controller
     {
         $_private_info = $request->get('_private_info');
         $menus = $_private_info['menus'];
-//        dump($menus);
-//        DB::connection('mongodb')       //选择使用mongodb
-//        ->collection('users_'.date('Ymd'))           //选择使用users集合
-//        ->insert([                          //插入数据
-//            'name'  =>  str_random(11),
-//            'age'     =>   rand(1,100)
-//        ]);
+
         $list = [];
-        return view('admin.users.list', compact('menus','list'));
+        return view('inx.articles.lists', compact('menus','list'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     * @Fname:创建文章
+     * @Fdisplay:true
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $_private_info = $request->get('_private_info');
+        $menus = $_private_info['menus'];
+        $list = [];
+        return view('inx.articles.create', compact('menus','list'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

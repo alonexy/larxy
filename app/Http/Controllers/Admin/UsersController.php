@@ -53,7 +53,7 @@ class UsersController extends Controller
         }
 
 //        dump($list);
-        return view('admin.users.list', compact('menus','list'));
+        return view('inx.users.list', compact('menus','list'));
     }
 
     /**
@@ -100,7 +100,7 @@ class UsersController extends Controller
                 return redirect(route('admin::users'));
             }
         }
-        return view('admin.users.info', compact('menus','roles'));
+        return view('inx.users.info', compact('menus','roles'));
     }
     /**
      * @Fname:账号信息编辑
@@ -117,7 +117,7 @@ class UsersController extends Controller
         $roles = $this->getActiveRoles();
         $Info = $this->UsersModel
             ->select(DB::raw('users.name as name ,users.id as id,users.email as email,users.rid as rid, users.status as status ,roles.name as r_name,users.created_at as created_at ,users.updated_at as updated_at'))
-            ->leftJoin('roles','users.rid','=','roles.id')->where('users.status',1)->where('users.id','=',$userid)
+            ->leftJoin('roles','users.rid','=','roles.id')->where('users.status','<>',3)->where('users.id','=',$userid)
             ->orderBy('users.id','desc')->first();
         if(empty($Info)){
             abort(403,'对不起，找不到用户');
@@ -154,7 +154,7 @@ class UsersController extends Controller
                 return redirect(route('admin::users'));
             }
         }
-        return view('admin.users.info', compact('menus','Info','roles'));
+        return view('inx.users.info', compact('menus','Info','roles'));
     }
     //获取有效的角色列表
     public function getActiveRoles(){

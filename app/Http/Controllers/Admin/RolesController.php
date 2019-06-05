@@ -32,7 +32,7 @@ class RolesController extends Controller
         $_private_info = $request->get('_private_info');
         $menus = $_private_info['menus'];
         $list = $this->RolesModel->where('status','<>',3)->get();
-        return view('admin.roles.list',compact('menus','list'));
+        return view('inx.roles.list',compact('menus','list'));
     }
 
     /**
@@ -73,7 +73,7 @@ class RolesController extends Controller
             $menusJson = json_encode(array_values($menusJson));
         }
 
-        return view('admin.roles.info',compact('menus','menusJson'));
+        return view('inx.roles.info',compact('menus','menusJson'));
     }
     //获取树形菜单json数组
     public function menusHandle($menus,$power='',$c=false){
@@ -145,7 +145,7 @@ class RolesController extends Controller
             return redirect()->route('admin::roles');
         }
         $menusJson = $this->menusHandle($menus,$roleInfo->powers);
-        return view('admin.roles.info',compact('menus','menusJson','roleInfo'));
+        return view('inx.roles.info',compact('menus','menusJson','roleInfo'));
     }
 
     /**

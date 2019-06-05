@@ -19,6 +19,7 @@ Route::group([ 'prefix' => 'admin','middleware' => ['auth','auth.basic','check.a
     Route::post('/user/destroy', ['as' => 'user::destroy', 'uses' => 'UsersController@destroy']);
 
     Route::get('/articles', ['as' => 'articles', 'uses' => 'ArticlesController@index']);
+    Route::get('/articles_create', ['as' => 'articles::create', 'uses' => 'ArticlesController@create']);
 });
 Route::group(['namespace' => 'Auth', 'as' => 'auth::'], function () {
     // 登录认证路由
