@@ -1,7 +1,15 @@
 ## 一个基于laravel5.1的后台系统
 
 模版采用 Adminlte.io
-样式参照：[Adminlte.io](https://adminlte.io/themes/AdminLTE/index.html)
+样式参照：[Adminlte.io](http://cn.inspinia.cn/)
+#### 前端代码更新
+```
+npm install
+
+npm run dev # 开发
+npm run prod  # 正式
+```
+
 #### 执行命令
 ```
 composer upadte
