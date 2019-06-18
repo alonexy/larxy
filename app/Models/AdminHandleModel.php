@@ -97,7 +97,7 @@ class AdminHandleModel extends Model
      * 待完善
      * @return array
      */
-    public function checkFunPower($action='',$menus=[])
+    public function checkFunPower($action='',$menus=[],$getPower=false)
     {
         if(empty($action)){
             $action = \Route::current()->getActionName();
@@ -122,6 +122,9 @@ class AdminHandleModel extends Model
                 return [false,'用户权限异常',[]];
             }
             if(!in_array($nowAction,$rPower)){
+                if($getPower){
+                    return [false,'您没有权限访问',$rPower];
+                }
                 return [false,'您没有权限访问',[]];
             }
             if($menus){
