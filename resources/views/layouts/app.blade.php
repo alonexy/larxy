@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inx - @yield('title') </title>
+    <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
+    <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
     <!-- Toastr style -->
     <link rel="stylesheet" href="/css_plugins/toastr/toastr.min.css" rel="stylesheet">
     <!-- Gritter -->
     <link href="/js_plugins/gritter/jquery.gritter.css" rel="stylesheet">
     <link href="/css_plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/css_plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
-    <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
-    <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
     <link rel="stylesheet" href="{{url('layui/css/layui.css')}}">
     <!-- Sweet Alert -->
     <link href="/css_plugins/sweetalert/sweetalert.css" rel="stylesheet">
