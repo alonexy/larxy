@@ -7,7 +7,6 @@
  */
 Route::group([ 'prefix' => 'admin','middleware' => ['auth','auth.basic','check.admin'], 'as' => 'admin::','namespace' => 'Admin'], function () {
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::get('/home/create', ['as' => 'home', 'uses' => 'HomeController@create']);
     Route::get('/roles', ['as' => 'roles', 'uses' => 'RolesController@index']);
     Route::any('/role/create', ['as' => 'role::create', 'uses' => 'RolesController@create']);
     Route::any('/role/edit', ['as' => 'role::edit', 'uses' => 'RolesController@edit']);
@@ -24,7 +23,7 @@ Route::group([ 'prefix' => 'admin','middleware' => ['auth','auth.basic','check.a
 Route::group(['namespace' => 'Auth', 'as' => 'auth::'], function () {
     // 登录认证路由
     Route::get('auth/login', ['as'=>'login::get','uses'=>'AuthController@getLogin']);
-    Route::post('auth/login', ['as'=>'login::post','uses'=>'AuthController@postLogin']);
+    Route::post('auth/login', ['as'=>'login::post','uses'=>'AuthController@postLoginV2']);
     Route::get('auth/logout', ['as'=>'logout','uses'=>'AuthController@getLogout']);
 //    // 注册用户路由
 //    Route::get('auth/register', ['as'=>'register::get','middleware' => ['auth'],'uses'=>'AuthController@getRegister']);
