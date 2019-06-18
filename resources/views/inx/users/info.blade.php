@@ -146,7 +146,7 @@
                     },
                     passwd_confirmation: {
                         required: true,
-                        maxlength: 4
+                        minlength: 4
                     }
                 }
             });
