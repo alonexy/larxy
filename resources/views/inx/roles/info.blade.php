@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('other-css')
-    <link href="{{asset("/cdnboot/select2/4.0.3/css/select2.min.css") }}" rel="stylesheet">
     <link rel="stylesheet" href="/ztree/css/bootstrapStyle/bootstrapStyle.css" type="text/css">
 @endsection
 @section('title')
@@ -34,7 +33,7 @@
                     <label class="col-sm-2 control-label">是否启用*</label>
 
                     <div class="col-sm-10">
-                        <select class="js-example-placeholder-single form-control">
+                        <select class="js-example-placeholder-single form-control" id="status">
                             @if(!empty($roleInfo->status) && ($roleInfo->status == 1))
                                 <option value="{{$roleInfo->status or 1}}" selected>启用</option>
                                 <option value="2">关闭</option>
@@ -65,7 +64,6 @@
     </div>
 @endsection
 @section('other-js')
-    <script src="//cdn.bootcss.com/select2/4.0.3/js/select2.full.min.js"></script>
     <script type="text/javascript" src="/ztree/js/jquery.ztree.core.js"></script>
     <script type="text/javascript" src="/ztree/js/jquery.ztree.excheck.js"></script>
     <script type="text/javascript" src="/ztree/js/jquery.ztree.exedit.js"></script>
@@ -127,22 +125,14 @@
 
         $(document).ready(function () {
             $.fn.zTree.init($("#treeDemo"), setting, zNodes);
-            $(".js-example-placeholder-single").select2({
-                placeholder: "请选择是否启用",
-                allowClear: false
-            });
             $("#fsubmit").bind({
                 click: function () {
                     if($("input[name='name']").val() == ''){
                         layer.msg('请输入角色名称');
                         return false;
                     }
-                    var isOnObj = $(".js-example-placeholder-single").select2('data');
-                    if (isOnObj[0].id == "") {
-                        layer.msg('请选择是否启用');
-                        return false;
-                    }
-                    $("input[name='status']").val(isOnObj[0].id)
+
+                    $("input[name='status']").val($("#status").val())
 
                     if (Powers.length == 0) {
                         layer.msg('请选择权限');
