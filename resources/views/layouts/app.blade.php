@@ -15,66 +15,70 @@
     <link rel="stylesheet" href="{{url('layui/css/layui.css')}}">
     <!-- Sweet Alert -->
     <link href="/css_plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    {{--<link href="/daterangepicker/daterangepicker.css" rel="stylesheet">--}}
+    <link rel="stylesheet" type="text/css" media="all" href="/daterangepicker/daterangepicker.css" >
     @section('other-css')
     @show
 </head>
 <body>
 
-  <!-- Wrapper-->
-    <div id="wrapper">
+<!-- Wrapper-->
+<div id="wrapper">
 
-        <!-- Navigation -->
-        @include('layouts.navigation')
+    <!-- Navigation -->
+    @include('layouts.navigation')
 
-        <!-- Page wraper -->
-        <div id="page-wrapper" class="gray-bg">
+            <!-- Page wraper -->
+    <div id="page-wrapper" class="gray-bg">
 
-            <!-- Page wrapper -->
-            @include('layouts.topnavbar')
+        <!-- Page wrapper -->
+        @include('layouts.topnavbar')
 
-            <!-- Main view  -->
-            @yield('content')
+                <!-- Main view  -->
+        @yield('content')
 
-            <!-- Footer -->
-            @include('layouts.footer')
-
-        </div>
-        <!-- End page wrapper-->
+                <!-- Footer -->
+        @include('layouts.footer')
 
     </div>
-    <!-- End wrapper-->
-  <script src="{!! asset('js/app.js') !!}" type="text/javascript"></script>
-  <!-- Flot -->
-  <script src="/js_plugins/flot/jquery.flot.js"></script>
-  <script src="/js_plugins/flot/jquery.flot.tooltip.min.js"></script>
-  <script src="/js_plugins/flot/jquery.flot.spline.js"></script>
-  <script src="/js_plugins/flot/jquery.flot.resize.js"></script>
-  <script src="/js_plugins/flot/jquery.flot.pie.js"></script>
-  <script src="/js_plugins/flot/jquery.flot.symbol.js"></script>
-  <script src="/js_plugins/flot/jquery.flot.time.js"></script>
-  <!-- Peity -->
-  <script src="/js_plugins/peity/jquery.peity.min.js"></script>
-  <!-- jQuery UI -->
-  <script src="/js_plugins/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Jvectormap -->
-  <script src="/js_plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-  <script src="/js_plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <!-- EayPIE -->
-  <script src="/js_plugins/easypiechart/jquery.easypiechart.js"></script>
-  <!-- Sparkline -->
-  <script src="/js_plugins/sparkline/jquery.sparkline.min.js"></script>
-  <!-- Toastr script -->
-  <script src="/js_plugins/toastr/toastr.min.js"></script>
-  <!-- iCheck -->
-  <script src="/js_plugins/iCheck/icheck.min.js"></script>
-  <script src="/layer/layer.js"></script>
-  <script src="{{url('laydate/laydate.js')}}"></script>
-  <script src="/layui/layui.js"></script>
-  <!-- Jquery Validate -->
-  <script src="/js_plugins/validate/jquery.validate.min.js"></script>
-  <script src="/js_plugins/validate/message_cn.js"></script>
-  <!-- Sweet alert -->
-  <script src="/js_plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- End page wrapper-->
+
+</div>
+<!-- End wrapper-->
+<script src="{!! asset('js/app.js') !!}" type="text/javascript"></script>
+<!-- Flot -->
+<script src="/js_plugins/flot/jquery.flot.js"></script>
+<script src="/js_plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="/js_plugins/flot/jquery.flot.spline.js"></script>
+<script src="/js_plugins/flot/jquery.flot.resize.js"></script>
+<script src="/js_plugins/flot/jquery.flot.pie.js"></script>
+<script src="/js_plugins/flot/jquery.flot.symbol.js"></script>
+<script src="/js_plugins/flot/jquery.flot.time.js"></script>
+<!-- Peity -->
+<script src="/js_plugins/peity/jquery.peity.min.js"></script>
+<!-- jQuery UI -->
+<script src="/js_plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Jvectormap -->
+<script src="/js_plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+<script src="/js_plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- EayPIE -->
+<script src="/js_plugins/easypiechart/jquery.easypiechart.js"></script>
+<!-- Sparkline -->
+<script src="/js_plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- Toastr script -->
+<script src="/js_plugins/toastr/toastr.min.js"></script>
+<!-- iCheck -->
+<script src="/js_plugins/iCheck/icheck.min.js"></script>
+<script src="/layer/layer.js"></script>
+<script src="{{url('laydate/laydate.js')}}"></script>
+<script src="/layui/layui.js"></script>
+<!-- Jquery Validate -->
+<script src="/js_plugins/validate/jquery.validate.min.js"></script>
+<script src="/js_plugins/validate/message_cn.js"></script>
+<!-- Sweet alert -->
+<script src="/js_plugins/sweetalert/sweetalert.min.js"></script>
+<script src="/daterangepicker/moment.js"></script>
+<script src="/daterangepicker/daterangepicker.js"></script>
 @section('scripts')
 @show
 {{-- 引入额外依赖JS插件 --}}
