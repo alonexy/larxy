@@ -24,7 +24,7 @@ class HomeController extends Controller
         $_private_info = $request->get('_private_info');
         $menus = $_private_info['menus'];
 
-        return view('inx.home.index', compact('collects','menus'));
+        return view('inx.home.index', compact('menus'));
     }
 
 
