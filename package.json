@@ -8,6 +8,6 @@
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-9",
     "laravel-elixir-webpack-official": "^1.0.2",
-    "lodash": "^4.17.13"
+    "lodash": "^4.17.19"
   }
 }
